@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01 Vuejs lesson </title>
+</head>
+<body>
+    
+    <div id="app1">
+        <h1>{{message}}</h1>
+        <p>{{body}}</p>
+    </div>
+
+    <div id="app2">
+        <h1>{{message}}</h1>
+        <p>{{body}}</p>
+    </div>
+
+
+    <!-- CDN =>  Development  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        let app1 = new Vue({
+            el : "#app1",
+            data : {
+                message : "Vuejs Title 1",
+                body : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore quia temporibus ab exercitationem asperiores? Voluptatum tempora placeat enim corrupti, reiciendis minima veniam velit?"
+            }
+        });
+
+        let app2 = new Vue({
+            el : "#app2",
+            data : {
+                message : "Vuejs Title 2",
+                body : "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore quia temporibus ab exercitationem asperiores? Voluptatum tempora placeat enim corrupti, reiciendis minima veniam velit?"
+            }
+        });
+    </script>
+</body>
+</html>
