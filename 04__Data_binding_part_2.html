@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>03_-_Data_binding_part_1 </title>
+    <title>04__Data_binding_part_2</title>
 </head>
 <style>
     .red-color {
@@ -12,6 +12,14 @@
     }
     .delete {
         text-decoration: line-through;
+    }
+    .img {
+        width: 300px;
+        margin-bottom: 20px;
+    }
+
+    .fs {
+        font-size: 50px;
     }
 </style>
 <body>
@@ -22,9 +30,11 @@
 
         <h1 v-bind:class="textRed">{{message}}</h1>
         <h1 :class="[textRed, deleteMessage]">{{message}}</h1>
-
         <h1><a v-bind:href="myURL1">Youtube</a></h1>
-        <h1><a :href="myURL2">Facebook</a></h1>
+
+        <img v-bind:src="myImg" class="img" alt="">
+        <img :src="myImg" class="img" alt="">
+        <div :title="titleVue" :class="titleSize"> Boat</div>
     </div>
 
     <!-- CDN =>  Development  -->
@@ -37,7 +47,10 @@
                 textRed : 'red-color',
                 deleteMessage : 'delete',
                 myURL1 : 'http://www.youtube.com',
-                myURL2 : 'http://www.facebook.com',
+                myImg : 'image/boat.jpg',
+                titleVue : 'Hello boat',
+                titleSize : 'fs',
+
                 
             }
         });
