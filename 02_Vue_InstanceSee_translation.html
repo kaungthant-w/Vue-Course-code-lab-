@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>02_Vue_InstanceSee_translation </title>
+</head>
+<body>
+    
+    <div id="app">
+        <h1>{{message}}</h1>
+
+        <!-- expression => ok , statement => not ok  -->
+
+        <h1>{{1+1}}</h1>
+        <h1>{{10+10}}</h1>
+        <h1>{{100+100}}</h1>
+
+        <!-- <h1> {{let h = 'hello world';}} </h1> -->
+
+        <p> {{message.split('')}} </p>
+        <p> {{message.split('').join('-')}} </p>
+
+        <!-- <h1> {{ if(true) hi }} </h1> -->
+        <h1> {{ status ? "ok, this is true.":"no, this is false." }} </h1>
+        <h1>{{ year }}</h1>
+        <h1> {{age}} </h1>
+        <h1> {{age + 10}} </h1>
+        <h1></h1>
+    </div>
+
+    <!-- CDN =>  Development  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        let app1 = new Vue({
+            el : "#app",
+            data : {
+                message : "Vue InstanceSee translation",
+                // status : false,
+                status : true,
+                year : 2023,
+                age : 23
+                
+            }
+        });
+
+    </script>
+</body>
+</html>
