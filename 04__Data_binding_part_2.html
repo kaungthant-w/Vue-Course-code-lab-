@@ -35,6 +35,8 @@
         <img v-bind:src="myImg" class="img" alt="">
         <img :src="myImg" class="img" alt="">
         <div :title="titleVue" :class="titleSize"> Boat</div>
+
+        <input type="text" :disabled="status" placeholder="disabled">
     </div>
 
     <!-- CDN =>  Development  -->
@@ -50,7 +52,8 @@
                 myImg : 'image/boat.jpg',
                 titleVue : 'Hello boat',
                 titleSize : 'fs',
-
+                // status:false,
+                status:true
                 
             }
         });
