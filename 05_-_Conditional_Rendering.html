@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>05_-_Conditional_Rendering</title>
+</head>
+<style>
+
+</style>
+<body>
+    
+    <div id="app">
+        <!-- <h1 v-if="status == true ">Hello Vue js</h1> -->
+        <h1 v-if="status">Hello Vue js</h1>
+        <h1 v-else>I'm False</h1>
+
+        <h1 v-if="fruit=='apple'">I am apple</h1>
+        <h1 v-else-if="fruit=='orange'">I am orange</h1>
+        <h1 v-else-if="fruit=='mango'">I am mango</h1>
+        <h1 v-else-if="fruit=='banana'">I am banana</h1>
+        <h1 v-else>No Fruits</h1>
+
+        <h1 v-show="status">OK</h1>
+    </div>
+
+    <!-- CDN =>  Development  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script>
+        let app = new Vue({
+            el : "#app",
+            data : {
+                status : true,
+                fruit : 'apple'
+
+                
+            }
+        });
+
+    </script>
+</body>
+</html>
