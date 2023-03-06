@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>09 Raw todos list part 1</title>
+</head>
+<style>
+
+</style>
+<body>
+    
+    <div id="app">
+        <h3>Todo List</h3>
+
+        <input type="text" placeholder="Enter name" v-model="productData.name"> <br> <br>
+        <input type="text" placeholder="Enter price" v-model="productData.price"> <br> <br>
+        <button @click="create()">Add</button>
+
+        <hr>
+        <table class="table" border="1">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="item in items">
+                    <td> {{item.id}} </td>
+                    <td> {{item.name}} </td>
+                    <td> {{item.price}} </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+    <!-- CDN =>  Development  -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    
+    <script>
+        let app = new Vue({
+            el : "#app",
+            data: {
+                productData: {
+                    name : '',
+                    price : ''
+                },
+                items: []
+            },
+
+            methods: {
+                create() {
+                    // console.log(this.items.length+1);
+                    this.items.push({
+                        id:this.items.length+1,
+                        name:this.productData.name,
+                        price: this.productData.price
+                    })
+
+                    this.productData.name = '';
+                    this.productData.price = '';
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>
